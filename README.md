@@ -48,4 +48,20 @@ mvn -Dmaven.javadoc.skip=true -DskipTests=true install
 
 docker run -v /Users/caleb.holt/hack/jdbcconnector/QueryBasedJdbcConnector/target/kafka-connect-target/usr/share/kafka-connect/QueryBasedJdbcConnector:/connectors/QueryBasedJdbcConnector -e ADV_HOST=127.0.0.1 -e SAMPLEDATA=0 -e EULA="https://dl.lenses.io/d/?id=38a5ed11-aa2b-433e-b8a2-f0aa748fdea9" --rm -p  3030:3030 -p 9092:9092 -p 2181:2181 lensesio/box
 
-jdbc:mysql://172.17.0.1:3307/gdb?autoReconnect=true&serverTimezone=America%2FDenver
+```
+connector.class=com.caleb.kafka.connect.jdbc.QueryBasedJdbcSinkConnector
+jdbc.password=**
+jdbc.username=**
+//172.17.0.1 is how you reference your host machine in docker
+jdbc.connection=jdbc:mysql://172.17.0.1:3306/mydatabase
+topics=test_topic_local
+tasks.max=1
+//patient_id and filler_number are values in the avro definition
+jdbc.query.1=insert into test.new_table (name, filler) values (:patient_id, :filler_number)
+//Queries add attributes to the context (only single rows allowed. Will overwrite any existing avro or previous query values so rename your columns on conflict)
+jdbc.query.2=select 'AnyValue' newAttribute)
+jdbc.queryType.2=query
+//This time it inserts with 'AnyValue" for 'filler' because query 2 added 'AnyValue' to the context (This type of thing can ussually be handled by joins and inserts instead)
+jdbc.query.3=replace into test.new_table (name, filler) values (:patient_id, :newAttribute)
+//replace is a construct for upsert based on primary key in MYSQL look up your own database specifics
+```
