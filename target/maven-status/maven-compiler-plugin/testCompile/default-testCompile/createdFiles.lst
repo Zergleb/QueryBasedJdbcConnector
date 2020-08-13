@@ -1,9 +1,0 @@
-com/caleb/kafka/connect/MySinkTaskIT.class
-com/caleb/kafka/connect/MyConverterTest.class
-com/caleb/kafka/connect/MySourceTaskIT.class
-com/caleb/kafka/connect/DocumentationTest.class
-com/caleb/kafka/connect/MySinkConnectorTest.class
-com/caleb/kafka/connect/MySourceTaskTest.class
-com/caleb/kafka/connect/MySinkTaskTest.class
-com/caleb/kafka/connect/MySourceConnectorTest.class
-com/caleb/kafka/connect/MyKeyValueTransformationTest.class
