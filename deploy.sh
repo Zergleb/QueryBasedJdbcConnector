@@ -1,0 +1,3 @@
+rm -rf /Users/caleb.holt/wrk/collective-compose/projects/kafka-connect/classpath/kafka-connect-target
+cp -r target/kafka-connect-target/ /Users/caleb.holt/wrk/collective-compose/projects/kafka-connect/classpath
+cp /Users/caleb.holt/wrk/collective-compose/projects/kafka-connect/classpath/mysql-connector-java-8.0.21.jar /Users/caleb.holt/wrk/collective-compose/projects/kafka-connect/classpath/kafka-connect-target/usr/share/kafka-connect/QueryBasedJdbcConnector/

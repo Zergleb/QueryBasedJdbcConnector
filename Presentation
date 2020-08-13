@@ -1,0 +1,40 @@
+
+// {
+//   "type": "record",
+//   "name": "orderresults",
+//   "namespace": "com.collectivemedical",
+//   "fields": [
+//     {
+//       "name": "collective_patient_id",
+//       "type": "string"
+//     },
+//     {
+//       "name": "placer_number",
+//       "type": "string"
+//     },
+//     {
+//       "name": "filler_number",
+//       "type": "string"
+//     }
+//   ]
+// }
+
+
+connector.class=com.caleb.kafka.connect.jdbc.QueryBasedJdbcSinkConnector
+jdbc.password=password
+jdbc.username=root
+jdbc.connection=jdbc:mysql://172.17.0.1:3307/gdb?autoReconnect=true&serverTimezone=America%2FDenver
+topics=test_topic_local
+tasks.max=1
+jdbc.query=insert into test.new_table (name, filler) values (:collective_patient_id, :filler_number)
+jdbc.insertMode=update
+
+mvn archetype:generate \
+    -DarchetypeGroupId=com.github.jcustenborder.kafka.connect \
+    -DarchetypeArtifactId=kafka-connect-quickstart \
+    -DarchetypeVersion=2.4.0 \
+    -Dpackage=com.caleb.kafka.connect \
+    -DgroupId=com.caleb.kafka.connect \
+    -DartifactId=QueryBasedJdbcConnector \
+    -DpackageName=com.caleb.kafka.connect \
+    -Dversion=1.0-SNAPSHOT

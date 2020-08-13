@@ -1,0 +1,9 @@
+/Users/caleb.holt/hack/QueryBasedJdbcConnector/src/test/java/com/caleb/kafka/connect/DocumentationTest.java
+/Users/caleb.holt/hack/QueryBasedJdbcConnector/src/test/java/com/caleb/kafka/connect/MySourceTaskIT.java
+/Users/caleb.holt/hack/QueryBasedJdbcConnector/src/test/java/com/caleb/kafka/connect/MySinkTaskIT.java
+/Users/caleb.holt/hack/QueryBasedJdbcConnector/src/test/java/com/caleb/kafka/connect/MySourceConnectorTest.java
+/Users/caleb.holt/hack/QueryBasedJdbcConnector/src/test/java/com/caleb/kafka/connect/MyKeyValueTransformationTest.java
+/Users/caleb.holt/hack/QueryBasedJdbcConnector/src/test/java/com/caleb/kafka/connect/MySinkTaskTest.java
+/Users/caleb.holt/hack/QueryBasedJdbcConnector/src/test/java/com/caleb/kafka/connect/MySourceTaskTest.java
+/Users/caleb.holt/hack/QueryBasedJdbcConnector/src/test/java/com/caleb/kafka/connect/MyConverterTest.java
+/Users/caleb.holt/hack/QueryBasedJdbcConnector/src/test/java/com/caleb/kafka/connect/MySinkConnectorTest.java
